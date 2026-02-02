@@ -1,0 +1,8 @@
+name: 'dbt_merge_files_test'
+version: '1.0.0'
+
+model-paths: ["models"]
+
+models:
+  dbt_merge_files_test:
+    +materialized: table
