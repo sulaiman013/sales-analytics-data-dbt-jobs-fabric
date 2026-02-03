@@ -22,4 +22,4 @@ SELECT DISTINCT
         END AS VARCHAR(20)
     ) AS period,
     CASE WHEN order_hour >= 9 AND order_hour < 17 THEN 1 ELSE 0 END AS is_business_hours
-FROM [sales_warehouse].[dbt_sales].[bronze_sales]
+FROM {{ ref('bronze_sales') }}

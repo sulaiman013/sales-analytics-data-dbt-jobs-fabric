@@ -51,4 +51,4 @@ SELECT
     is_first_order,
     is_reorder
 
-FROM [sales_warehouse].[dbt_sales].[bronze_sales]
+FROM {{ ref('bronze_sales') }}

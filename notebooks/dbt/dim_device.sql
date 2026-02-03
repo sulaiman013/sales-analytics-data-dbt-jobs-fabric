@@ -12,4 +12,4 @@
 SELECT DISTINCT
     ROW_NUMBER() OVER (ORDER BY device_type) AS device_key,
     CAST(device_type AS VARCHAR(50)) AS device_type
-FROM [sales_warehouse].[dbt_sales].[bronze_sales]
+FROM {{ ref('bronze_sales') }}

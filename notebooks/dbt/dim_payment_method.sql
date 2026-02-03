@@ -12,4 +12,4 @@
 SELECT DISTINCT
     ROW_NUMBER() OVER (ORDER BY payment_method) AS payment_method_key,
     CAST(payment_method AS VARCHAR(50)) AS payment_method
-FROM [sales_warehouse].[dbt_sales].[bronze_sales]
+FROM {{ ref('bronze_sales') }}

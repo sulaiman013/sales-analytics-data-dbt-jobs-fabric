@@ -12,4 +12,4 @@
 SELECT DISTINCT
     driver_id AS driver_key,
     driver_id
-FROM [sales_warehouse].[dbt_sales].[bronze_sales]
+FROM {{ ref('bronze_sales') }}

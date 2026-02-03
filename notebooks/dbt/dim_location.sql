@@ -14,4 +14,4 @@ SELECT DISTINCT
     CAST(city AS VARCHAR(100)) AS city,
     CAST(state AS VARCHAR(100)) AS state,
     CAST(country AS VARCHAR(100)) AS country
-FROM [sales_warehouse].[dbt_sales].[bronze_sales]
+FROM {{ ref('bronze_sales') }}

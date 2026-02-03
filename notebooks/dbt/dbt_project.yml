@@ -1,8 +1,13 @@
-name: 'dbt_merge_files_test'
+name: 'dbt_processes'
 version: '1.0.0'
+config-version: 2
+
+profile: 'fabric'
 
 model-paths: ["models"]
 
 models:
-  dbt_merge_files_test:
+  dbt_processes:
     +materialized: table
+    gold:
+      +materialized: table

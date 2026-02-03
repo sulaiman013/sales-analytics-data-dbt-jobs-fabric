@@ -20,4 +20,4 @@ SELECT DISTINCT
     order_day_of_week AS day_of_week,
     CAST(DATENAME(WEEKDAY, order_date) AS VARCHAR(20)) AS day_name,
     is_weekend
-FROM [sales_warehouse].[dbt_sales].[bronze_sales]
+FROM {{ ref('bronze_sales') }}

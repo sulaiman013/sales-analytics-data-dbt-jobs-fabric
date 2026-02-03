@@ -12,4 +12,4 @@
 SELECT DISTINCT
     ROW_NUMBER() OVER (ORDER BY order_status) AS order_status_key,
     CAST(order_status AS VARCHAR(50)) AS order_status
-FROM [sales_warehouse].[dbt_sales].[bronze_sales]
+FROM {{ ref('bronze_sales') }}

@@ -12,4 +12,4 @@
 SELECT DISTINCT
     ROW_NUMBER() OVER (ORDER BY promo_code) AS promo_key,
     CAST(promo_code AS VARCHAR(50)) AS promo_code
-FROM [sales_warehouse].[dbt_sales].[bronze_sales]
+FROM {{ ref('bronze_sales') }}

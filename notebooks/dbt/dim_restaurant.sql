@@ -15,7 +15,7 @@ WITH ranked AS (
         restaurant_id,
         restaurant_type,
         ROW_NUMBER() OVER (PARTITION BY restaurant_id ORDER BY restaurant_type) AS rn
-    FROM [sales_warehouse].[dbt_sales].[bronze_sales]
+    FROM {{ ref('bronze_sales') }}
 )
 SELECT
     restaurant_id AS restaurant_key,
